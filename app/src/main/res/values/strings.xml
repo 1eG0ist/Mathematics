@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mathematics</string>
+    <string name="CombinatoricsDescription">combinatorics Image Button</string>
+    <string name="MatrixDescription">Matrices Image Button</string>
+    <string name="MainFormulasDescription">combinatorics Image Button</string>
+    <string name="GuideDescription">combinatorics Image Button</string>
 </resources>

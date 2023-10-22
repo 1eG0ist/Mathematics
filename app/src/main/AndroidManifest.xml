@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Mathematics"
         tools:targetApi="31">
         <activity
+            android:name=".CombinatoricsView"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
