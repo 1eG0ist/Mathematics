@@ -1,9 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CombinatoricsView">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".CombinatoricsView"
+android:background="@drawable/gradient_main_bg">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/topMenu"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="-5dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginEnd="-5dp"
+                android:background="@drawable/item_main_menu"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp">
+
+                    <ImageButton
+                        android:id="@+id/CombinatoricsButton"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/CombinatoricsDescription"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/img_combinatorics_2" />
+
+                    <ImageButton
+                        android:id="@+id/MatricesButton"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/MatrixDescription"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/img_matrices_1" />
+
+                    <ImageButton
+                        android:id="@+id/MainFormulasButton"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/MainFormulasDescription"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/img_main_formulas_1" />
+
+                    <ImageButton
+                        android:id="@+id/GuideButton"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/GuideDescription"
+                        android:layoutDirection="rtl"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/img_guide_1" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/topMenu"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingHorizontal="5dp"
+                        android:text="@string/factorial"
+                        android:textColor="@color/purple_1"
+                        android:textSize="24sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="5dp">
+
+                        <EditText
+                            android:id="@+id/factorial_input"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginVertical="15dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="100dp"
+                            android:minWidth="50dp"
+                            android:paddingHorizontal="10dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp" />
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageButton
+                            android:id="@+id/factorial_confirm_input_button"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:maxHeight="60sp"
+                            android:layout_marginVertical="10dp"
+                            android:scaleType="centerInside"
+                            android:backgroundTint="@color/purple_2"
+                            app:srcCompat="@drawable/icon_confirm_convert_button"/>
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:id="@+id/factorial_result"
+                            android:layout_width="wrap_content"
+                            android:minWidth="50dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:maxWidth="150dp"
+                            android:textSize="24sp"
+                            android:textColor="@color/gray_2"
+                            android:background="@drawable/item_input_text_bg"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingHorizontal="5dp"
+                        android:text="@string/combinations"
+                        android:textColor="@color/purple_1"
+                        android:textSize="24sp"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:minWidth="50dp"
+                        android:maxWidth="200dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

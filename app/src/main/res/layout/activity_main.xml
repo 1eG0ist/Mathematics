@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/CombinatoricsDescription"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/img_book" />
+                app:srcCompat="@drawable/img_combinatorics_1" />
 
             <ImageButton
                 android:id="@+id/MatricesButton"
@@ -45,7 +45,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/MatrixDescription"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/img_book" />
+                app:srcCompat="@drawable/img_matrices_1" />
 
             <ImageButton
                 android:id="@+id/MainFormulasButton"
@@ -55,7 +55,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/MainFormulasDescription"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/img_book" />
+                app:srcCompat="@drawable/img_main_formulas_1" />
 
             <ImageButton
                 android:id="@+id/GuideButton"
@@ -66,7 +66,7 @@
                 android:contentDescription="@string/GuideDescription"
                 android:layoutDirection="rtl"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/img_book" />
+                app:srcCompat="@drawable/img_guide_1" />
 
         </LinearLayout>
 
@@ -83,4 +83,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/relativeLayout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

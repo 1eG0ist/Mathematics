@@ -1,5 +1,6 @@
 package com.example.mathematics
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -11,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val combinatoricsBtn = findViewById<ImageButton>(R.id.CombinatoricsButton)
         combinatoricsBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, CombinatoricsView::class.java)
+            startActivity(intent)
         }
 
     }

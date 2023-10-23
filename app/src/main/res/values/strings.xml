@@ -4,4 +4,9 @@
     <string name="MatrixDescription">Matrices Image Button</string>
     <string name="MainFormulasDescription">combinatorics Image Button</string>
     <string name="GuideDescription">combinatorics Image Button</string>
+
+    <!-- combinatorics page-->
+    <string name="factorial">Факториал</string>
+    <string name="combinations">Перестановки</string>
+    <string name="confirm_button">Подтвердить</string>
 </resources>
