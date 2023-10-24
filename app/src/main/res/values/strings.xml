@@ -9,4 +9,9 @@
     <string name="factorial">Факториал</string>
     <string name="combinations">Перестановки</string>
     <string name="confirm_button">Подтвердить</string>
+    <string name="elements">Элементы</string>
+    <string name="enter_elements">Введите элементы</string>
+    <string name="count">Длина</string>
+    <string name="fill_1">1</string>
+    <string name="enter_number">Введите число</string>
 </resources>
