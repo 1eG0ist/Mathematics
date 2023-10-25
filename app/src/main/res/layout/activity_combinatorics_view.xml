@@ -9,102 +9,103 @@
     tools:ignore="LabelFor"
     android:background="@drawable/gradient_main_bg">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/topMenu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="-5dp"
+            android:background="@drawable/item_main_menu"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <ImageButton
+                    android:id="@+id/CombinatoricsButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="45dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/CombinatoricsDescription"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/img_combinatorics_2" />
+
+                <ImageButton
+                    android:id="@+id/MatricesButton"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/MatrixDescription"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/img_matrices_1" />
+
+                <ImageButton
+                    android:id="@+id/MainFormulasButton"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/MainFormulasDescription"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/img_main_formulas_1" />
+
+                <ImageButton
+                    android:id="@+id/GuideButton"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/GuideDescription"
+                    android:layoutDirection="rtl"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/img_guide_1" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topMenu"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp">
 
-            <RelativeLayout
-                android:id="@+id/topMenu"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="-5dp"
-                android:layout_marginTop="-5dp"
-                android:layout_marginEnd="-5dp"
-                android:background="@drawable/item_main_menu"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="20dp">
-
-                    <ImageButton
-                        android:id="@+id/CombinatoricsButton"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="45dp"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/CombinatoricsDescription"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/img_combinatorics_2" />
-
-                    <ImageButton
-                        android:id="@+id/MatricesButton"
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/MatrixDescription"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/img_matrices_1" />
-
-                    <ImageButton
-                        android:id="@+id/MainFormulasButton"
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/MainFormulasDescription"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/img_main_formulas_1" />
-
-                    <ImageButton
-                        android:id="@+id/GuideButton"
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:contentDescription="@string/GuideDescription"
-                        android:layoutDirection="rtl"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/img_guide_1" />
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/topMenu"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="10dp">
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:text="@string/factorial"
+                    android:textColor="@color/blue_1"
+                    android:textSize="24sp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:paddingHorizontal="5dp"
-                        android:text="@string/factorial"
-                        android:textColor="@color/purple_1"
-                        android:textSize="24sp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center_horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="60dp"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
@@ -130,8 +131,7 @@
                         <ImageButton
                             android:id="@+id/factorialConfirmInputButton"
                             android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:maxHeight="60sp"
+                            android:layout_height="40sp"
                             android:layout_marginVertical="10dp"
                             android:scaleType="centerInside"
                             android:backgroundTint="@color/purple_2"
@@ -155,125 +155,331 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:paddingHorizontal="5dp"
-                        android:text="@string/combinations"
-                        android:textColor="@color/purple_1"
-                        android:textSize="24sp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:text="@string/placement"
+                    android:textColor="@color/blue_1"
+                    android:textSize="24sp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center_horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/placementTopInput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="100dp"
+                            android:maxLength="4"
+                            android:minWidth="50dp"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            android:contentDescription="@string/enter_number"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                android:text="@string/elements"
-                                android:textSize="12sp"
-                                android:textColor="@color/gray_0"/>
+                                android:textColor="@color/purple_1"
+                                android:textSize="50sp"
+                                android:layout_marginBottom="-10dp"
+                                android:layout_marginTop="-15dp"
+                                android:text="@string/a"/>
 
-                            <EditText
-                                android:id="@+id/inputElements"
+                            <Space
+                                android:layout_width="20sp"
+                                android:layout_height="match_parent"/>
+
+                            <ImageButton
+                                android:id="@+id/placementConfirmInputButton"
+                                android:layout_width="50dp"
+                                android:layout_height="40sp"
+                                android:scaleType="centerInside"
+                                android:backgroundTint="@color/purple_2"
+                                android:contentDescription="@string/confirm_button"
+                                app:srcCompat="@drawable/icon_confirm_convert_button"/>
+
+                            <Space
+                                android:layout_width="20sp"
+                                android:layout_height="match_parent"/>
+
+                            <TextView
+                                android:id="@+id/placementResult"
                                 android:layout_width="wrap_content"
                                 android:layout_height="35dp"
                                 android:background="@drawable/item_input_text_bg"
-                                android:contentDescription="@string/enter_elements"
-                                android:inputType="text"
-                                android:maxWidth="120sp"
-                                android:minWidth="60dp"
+                                android:maxWidth="150dp"
+                                android:minWidth="50dp"
                                 android:paddingHorizontal="10dp"
                                 android:textColor="@color/gray_2"
                                 android:textSize="24sp" />
 
                         </LinearLayout>
 
-                        <Space
-                            android:layout_width="20dp"
-                            android:layout_height="match_parent"/>
+                        <EditText
+                            android:id="@+id/placementBottomInput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="100dp"
+                            android:maxLength="4"
+                            android:minWidth="50dp"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            android:contentDescription="@string/enter_number"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:text="@string/combination"
+                    android:textColor="@color/blue_1"
+                    android:textSize="24sp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/combinationTopInput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="100dp"
+                            android:maxLength="4"
+                            android:minWidth="50dp"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            android:contentDescription="@string/enter_number"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                android:text="@string/count"
-                                android:textSize="12sp"
-                                android:textColor="@color/gray_0"/>
-
-                            <EditText
-                                android:id="@+id/countOfInputElements"
                                 android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/purple_1"
+                                android:textSize="50sp"
+                                android:layout_marginBottom="-10dp"
+                                android:layout_marginTop="-15dp"
+                                android:text="@string/c"/>
+
+                            <Space
+                                android:layout_width="20sp"
+                                android:layout_height="match_parent"/>
+
+                            <ImageButton
+                                android:id="@+id/combinationConfirmInputButton"
+                                android:layout_width="50dp"
+                                android:layout_height="40sp"
+                                android:scaleType="centerInside"
+                                android:backgroundTint="@color/purple_2"
+                                android:contentDescription="@string/confirm_button"
+                                app:srcCompat="@drawable/icon_confirm_convert_button"/>
+
+                            <Space
+                                android:layout_width="20sp"
+                                android:layout_height="match_parent"/>
+
+                            <TextView
+                                android:id="@+id/combinationResult"
+                                android:layout_width="wrap_content"
+                                android:minWidth="50dp"
                                 android:layout_height="35dp"
-                                android:background="@drawable/item_input_text_bg"
-                                android:maxWidth="120sp"
-                                android:minWidth="60dp"
+                                android:maxWidth="150dp"
                                 android:paddingHorizontal="10dp"
-                                android:textColor="@color/gray_2"
                                 android:textSize="24sp"
-                                android:inputType="number"
-                                android:contentDescription="@string/enter_number"
-                                android:autofillHints="1" />
+                                android:textColor="@color/gray_2"
+                                android:background="@drawable/item_input_text_bg"/>
 
                         </LinearLayout>
 
-                        <Space
-                            android:layout_width="20dp"
-                            android:layout_height="match_parent"/>
-
-                        <ImageButton
-                            android:id="@+id/combinationsConfirmInputButton"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:maxHeight="60sp"
-                            android:layout_marginVertical="10dp"
-                            android:scaleType="centerInside"
-                            android:backgroundTint="@color/purple_2"
-                            android:contentDescription="@string/confirm_button"
-                            app:srcCompat="@drawable/icon_confirm_convert_button"/>
+                        <EditText
+                            android:id="@+id/combinationBottomInput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="100dp"
+                            android:maxLength="4"
+                            android:minWidth="50dp"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            android:contentDescription="@string/enter_number"/>
 
                     </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:text="@string/combinations"
+                    android:textColor="@color/blue_1"
+                    android:textSize="24sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:orientation="horizontal"
-                        android:baselineAligned="false">
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="vertical">
 
-                        <ListView
-                            android:id="@+id/listWithRepeats"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/elements"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray_0"/>
 
-                        <ListView
-                            android:id="@+id/listWithOutRepeats"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"/>
+                        <EditText
+                            android:id="@+id/inputElements"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:contentDescription="@string/enter_elements"
+                            android:inputType="text"
+                            android:maxWidth="120sp"
+                            android:minWidth="60dp"
+                            android:paddingHorizontal="10dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp" />
 
                     </LinearLayout>
+
+                    <Space
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/count"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray_0"/>
+
+                        <EditText
+                            android:id="@+id/countOfInputElements"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/item_input_text_bg"
+                            android:maxWidth="120sp"
+                            android:minWidth="60dp"
+                            android:paddingHorizontal="10dp"
+                            android:textColor="@color/gray_2"
+                            android:textSize="24sp"
+                            android:inputType="number"
+                            android:contentDescription="@string/enter_number"
+                            android:autofillHints="1" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton
+                        android:id="@+id/combinationsConfirmInputButton"
+                        android:layout_width="50dp"
+                        android:layout_height="40sp"
+                        android:layout_marginVertical="10dp"
+                        android:scaleType="centerInside"
+                        android:backgroundTint="@color/purple_2"
+                        android:contentDescription="@string/confirm_button"
+                        app:srcCompat="@drawable/icon_confirm_convert_button"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <!-- TODO create adaptive list height-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <ListView
+                        android:id="@+id/listWithRepeats"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="93dp"
+                        tools:listitem="@layout/list_item"
+                         />
+
+                    <View
+                        android:id="@+id/lineBetweenLists"
+                        android:layout_width="1dp"
+                        android:layout_height="93dp"
+                        android:visibility="invisible"
+                        android:background="@color/gray_0"/>
+
+                    <ListView
+                        android:id="@+id/listWithOutRepeats"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="93dp"
+                        tools:listitem="@layout/list_item"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
-    </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>

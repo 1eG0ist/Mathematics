@@ -2,15 +2,18 @@ package com.example.mathematics
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.ArrayAdapter
+import android.view.View
+import android.widget.*
 import com.example.mathematics.databinding.ActivityCombinatoricsViewBinding
 import java.util.LinkedList
 
 class CombinatoricsView : AppCompatActivity() {
     private lateinit var binding: ActivityCombinatoricsViewBinding
+    private lateinit var listAdapterWithRepeats: ListAdapter
+    private lateinit var listAdapterWithOutRepeats: ListAdapter
+    private lateinit var listData: ListData
+    var dataArrayListWithRepeats = ArrayList<ListData?>()
+    var dataArrayListWithOutRepeats = ArrayList<ListData?>()
     override fun onCreate(savedInstanceState: Bundle?) {
         // connecting to the desired layout
         super.onCreate(savedInstanceState)
@@ -28,30 +31,63 @@ class CombinatoricsView : AppCompatActivity() {
             if (binding.inputElements.text != null && binding.inputElements.text.toString() != "") {
 
                 //TODO create own adapter
+                val permutationsList: ArrayList<String>
 
                 if (binding.countOfInputElements.text != null && binding.countOfInputElements.text.toString() != "") {
 
-                    binding.listWithRepeats.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                        GeneratePermutations(binding.countOfInputElements.text.toString().toInt(),
-                        binding.inputElements.text.toString().toCharArray()).permutations)
-
-                    binding.listWithOutRepeats.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                        GeneratePermutations(binding.countOfInputElements.text.toString().toInt(),
-                        binding.inputElements.text.toString().toCharArray()).permutations.toSet().toList())
+                    permutationsList = GeneratePermutations(
+                        binding.countOfInputElements.text.toString().toInt(),
+                        binding.inputElements.text.toString().toCharArray()
+                    ).permutations
 
                 } else {
 
-                    binding.listWithRepeats.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                        GeneratePermutations(binding.inputElements.text.toString().length,
-                        binding.inputElements.text.toString().toCharArray()).permutations)
-
-                    binding.listWithOutRepeats.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                        GeneratePermutations(binding.inputElements.text.toString().length,
-                            binding.inputElements.text.toString().toCharArray()).permutations.toSet().toList())
+                    permutationsList = GeneratePermutations(
+                        binding.inputElements.text.toString().length,
+                        binding.inputElements.text.toString().toCharArray()
+                    ).permutations
 
                 }
+
+                val permutationsWithOutRepeats: List<String> = permutationsList.toSet().toList()
+                dataArrayListWithRepeats.clear()
+                dataArrayListWithOutRepeats.clear()
+
+                if (permutationsList.size > 0) {
+                    binding.lineBetweenLists.visibility = View.VISIBLE
+                } else {
+                    binding.lineBetweenLists.visibility = View.INVISIBLE
+                }
+
+                // working with adapter for list with repeats
+
+                for (i in permutationsList.indices) {
+                    listData = ListData("${i+1}.", permutationsList[i])
+                    dataArrayListWithRepeats.add(listData)
+                }
+
+                listAdapterWithRepeats = ListAdapter(this, dataArrayListWithRepeats)
+                binding.listWithRepeats.adapter = listAdapterWithRepeats
+
+                // working with adapter for list without repeats
+
+                for (i in permutationsWithOutRepeats.indices) {
+                    listData = ListData("${i+1}.", permutationsWithOutRepeats[i])
+                    dataArrayListWithOutRepeats.add(listData)
+                }
+
+                listAdapterWithOutRepeats = ListAdapter(this, dataArrayListWithOutRepeats)
+                binding.listWithOutRepeats.adapter = listAdapterWithOutRepeats
+
             } else {
-                // TODO create toast with hint that we need symbols from user
+                dataArrayListWithRepeats.clear()
+                dataArrayListWithOutRepeats.clear()
+                listAdapterWithRepeats = ListAdapter(this, dataArrayListWithRepeats)
+                binding.listWithRepeats.adapter = listAdapterWithRepeats
+                listAdapterWithOutRepeats = ListAdapter(this, dataArrayListWithOutRepeats)
+                binding.listWithOutRepeats.adapter = listAdapterWithOutRepeats
+                binding.lineBetweenLists.visibility = View.INVISIBLE
+                Toast.makeText(this, "Требуется ввести хотя бы 1 символ", Toast.LENGTH_SHORT).show()
             }
         }
 
