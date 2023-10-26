@@ -11,6 +11,7 @@
     <color name="gray_2">#5C677D</color>
     <color name="gray_2_transparent">#805C677D</color>
     <color name="gray_3">#33415C</color>
+    <color name="purple_0">#7E0475</color>
     <color name="purple_1">#4E026E</color>
     <color name="purple_2">#3E0475</color>
 </resources>

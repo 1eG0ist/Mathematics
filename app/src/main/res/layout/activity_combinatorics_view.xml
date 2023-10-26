@@ -96,7 +96,7 @@
                     android:gravity="center_horizontal"
                     android:paddingHorizontal="5dp"
                     android:text="@string/factorial"
-                    android:textColor="@color/blue_1"
+                    android:textColor="@color/gray_1"
                     android:textSize="24sp"/>
 
                 <RelativeLayout
@@ -163,7 +163,7 @@
                     android:gravity="center_horizontal"
                     android:paddingHorizontal="5dp"
                     android:text="@string/placement"
-                    android:textColor="@color/blue_1"
+                    android:textColor="@color/gray_1"
                     android:textSize="24sp"/>
 
                 <RelativeLayout
@@ -199,7 +199,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/purple_1"
+                                android:textColor="@color/gray_0"
                                 android:textSize="50sp"
                                 android:layout_marginBottom="-10dp"
                                 android:layout_marginTop="-15dp"
@@ -260,7 +260,7 @@
                     android:gravity="center_horizontal"
                     android:paddingHorizontal="5dp"
                     android:text="@string/combination"
-                    android:textColor="@color/blue_1"
+                    android:textColor="@color/gray_1"
                     android:textSize="24sp"/>
 
                 <RelativeLayout
@@ -296,7 +296,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/purple_1"
+                                android:textColor="@color/gray_0"
                                 android:textSize="50sp"
                                 android:layout_marginBottom="-10dp"
                                 android:layout_marginTop="-15dp"
@@ -357,7 +357,7 @@
                     android:gravity="center_horizontal"
                     android:paddingHorizontal="5dp"
                     android:text="@string/combinations"
-                    android:textColor="@color/blue_1"
+                    android:textColor="@color/gray_1"
                     android:textSize="24sp"/>
 
                 <LinearLayout
@@ -456,6 +456,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="93dp"
+                        android:layout_marginEnd="5dp"
                         tools:listitem="@layout/list_item"
                          />
 
@@ -471,6 +472,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="93dp"
+                        android:layout_marginStart="5dp"
                         tools:listitem="@layout/list_item"
                         />
 

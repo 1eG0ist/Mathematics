@@ -91,6 +91,41 @@ class CombinatoricsView : AppCompatActivity() {
             }
         }
 
+        binding.placementConfirmInputButton.setOnClickListener {
+            if (binding.placementBottomInput.text != null && binding.placementBottomInput.text.toString() != "" &&
+                    binding.placementTopInput.text != null && binding.placementTopInput.text.toString() != "") {
+
+                binding.placementResult.text = (
+                        (fact(binding.placementBottomInput.text.toString().toInt()))/
+                                (fact(binding.placementBottomInput.text.toString().toInt() -
+                                        binding.placementTopInput.text.toString().toInt()))
+                        ).toString()
+
+            } else {
+                Toast.makeText(this, "Недостаточно данных", Toast.LENGTH_SHORT).show()
+                binding.placementResult.text = null
+            }
+
+        }
+
+        binding.combinationConfirmInputButton.setOnClickListener {
+            if (binding.combinationBottomInput.text != null && binding.combinationBottomInput.text.toString() != "" &&
+                binding.combinationTopInput.text != null && binding.combinationTopInput.text.toString() != "") {
+
+                binding.combinationResult.text = (
+                        (fact(binding.combinationBottomInput.text.toString().toInt()))/
+                                (fact(binding.combinationBottomInput.text.toString().toInt() -
+                                        binding.combinationTopInput.text.toString().toInt()) *
+                                fact(binding.combinationTopInput.text.toString().toInt()))
+                        ).toString()
+
+            } else {
+                Toast.makeText(this, "Недостаточно данных", Toast.LENGTH_SHORT).show()
+                binding.combinationResult.text = null
+            }
+
+        }
+
     }
 
     private fun fact(n: Int): Long {
