@@ -14,74 +14,8 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/topMenu"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="-5dp"
-            android:layout_marginTop="-5dp"
-            android:layout_marginEnd="-5dp"
-            android:background="@drawable/item_main_menu"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp">
-
-                <ImageButton
-                    android:id="@+id/CombinatoricsButton"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="45dp"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/CombinatoricsDescription"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/img_combinatorics_2" />
-
-                <ImageButton
-                    android:id="@+id/MatricesButton"
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/MatrixDescription"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/img_matrices_1" />
-
-                <ImageButton
-                    android:id="@+id/MainFormulasButton"
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/MainFormulasDescription"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/img_main_formulas_1" />
-
-                <ImageButton
-                    android:id="@+id/GuideButton"
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/GuideDescription"
-                    android:layoutDirection="rtl"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/img_guide_1" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/topMenu"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="10dp">
 
@@ -147,7 +81,7 @@
                             android:layout_width="wrap_content"
                             android:minWidth="50dp"
                             android:layout_height="35dp"
-                            android:maxWidth="150dp"
+                            android:maxWidth="200dp"
                             android:paddingHorizontal="10dp"
                             android:textSize="24sp"
                             android:textColor="@color/gray_2"
@@ -227,7 +161,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="35dp"
                                 android:background="@drawable/item_input_text_bg"
-                                android:maxWidth="150dp"
+                                android:maxWidth="200dp"
                                 android:minWidth="50dp"
                                 android:paddingHorizontal="10dp"
                                 android:textColor="@color/gray_2"
@@ -324,7 +258,7 @@
                                 android:layout_width="wrap_content"
                                 android:minWidth="50dp"
                                 android:layout_height="35dp"
-                                android:maxWidth="150dp"
+                                android:maxWidth="200dp"
                                 android:paddingHorizontal="10dp"
                                 android:textSize="24sp"
                                 android:textColor="@color/gray_2"

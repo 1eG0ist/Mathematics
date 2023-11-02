@@ -30,54 +30,64 @@ class CombinatoricsView : AppCompatActivity() {
         binding.combinationsConfirmInputButton.setOnClickListener {
             if (binding.inputElements.text != null && binding.inputElements.text.toString() != "") {
 
-                //TODO create own adapter
-                val permutationsList: ArrayList<String>
-
-                if (binding.countOfInputElements.text != null && binding.countOfInputElements.text.toString() != "") {
-
-                    permutationsList = GeneratePermutations(
-                        binding.countOfInputElements.text.toString().toInt(),
-                        binding.inputElements.text.toString().toCharArray()
-                    ).permutations
-
+                val multiplier: Int
+                if (binding.countOfInputElements.text != null || binding.countOfInputElements.text.toString() != "") {
+                    multiplier = binding.inputElements.text.toString().length
                 } else {
-
-                    permutationsList = GeneratePermutations(
-                        binding.inputElements.text.toString().length,
-                        binding.inputElements.text.toString().toCharArray()
-                    ).permutations
-
+                    multiplier = binding.countOfInputElements.text.toString().toInt()
                 }
 
-                val permutationsWithOutRepeats: List<String> = permutationsList.toSet().toList()
-                dataArrayListWithRepeats.clear()
-                dataArrayListWithOutRepeats.clear()
+                if (binding.inputElements.text.toString().length * multiplier < 50) {
+                    val permutationsList: ArrayList<String>
 
-                if (permutationsList.size > 0) {
-                    binding.lineBetweenLists.visibility = View.VISIBLE
+                    if (binding.countOfInputElements.text != null && binding.countOfInputElements.text.toString() != "") {
+
+                        permutationsList = GeneratePermutations(
+                            binding.countOfInputElements.text.toString().toInt(),
+                            binding.inputElements.text.toString().toCharArray()
+                        ).permutations
+
+                    } else {
+
+                        permutationsList = GeneratePermutations(
+                            binding.inputElements.text.toString().length,
+                            binding.inputElements.text.toString().toCharArray()
+                        ).permutations
+
+                    }
+
+                    val permutationsWithOutRepeats: List<String> = permutationsList.toSet().toList()
+                    dataArrayListWithRepeats.clear()
+                    dataArrayListWithOutRepeats.clear()
+
+                    if (permutationsList.size > 0) {
+                        binding.lineBetweenLists.visibility = View.VISIBLE
+                    } else {
+                        binding.lineBetweenLists.visibility = View.INVISIBLE
+                    }
+
+                    // working with adapter for list with repeats
+
+                    for (i in permutationsList.indices) {
+                        listData = ListData("${i+1}.", permutationsList[i])
+                        dataArrayListWithRepeats.add(listData)
+                    }
+
+                    listAdapterWithRepeats = ListAdapter(this, dataArrayListWithRepeats)
+                    binding.listWithRepeats.adapter = listAdapterWithRepeats
+
+                    // working with adapter for list without repeats
+
+                    for (i in permutationsWithOutRepeats.indices) {
+                        listData = ListData("${i+1}.", permutationsWithOutRepeats[i])
+                        dataArrayListWithOutRepeats.add(listData)
+                    }
+
+                    listAdapterWithOutRepeats = ListAdapter(this, dataArrayListWithOutRepeats)
+                    binding.listWithOutRepeats.adapter = listAdapterWithOutRepeats
                 } else {
-                    binding.lineBetweenLists.visibility = View.INVISIBLE
+                    Toast.makeText(this, "Слишком большое кол-во перестановок", Toast.LENGTH_SHORT).show()
                 }
-
-                // working with adapter for list with repeats
-
-                for (i in permutationsList.indices) {
-                    listData = ListData("${i+1}.", permutationsList[i])
-                    dataArrayListWithRepeats.add(listData)
-                }
-
-                listAdapterWithRepeats = ListAdapter(this, dataArrayListWithRepeats)
-                binding.listWithRepeats.adapter = listAdapterWithRepeats
-
-                // working with adapter for list without repeats
-
-                for (i in permutationsWithOutRepeats.indices) {
-                    listData = ListData("${i+1}.", permutationsWithOutRepeats[i])
-                    dataArrayListWithOutRepeats.add(listData)
-                }
-
-                listAdapterWithOutRepeats = ListAdapter(this, dataArrayListWithOutRepeats)
-                binding.listWithOutRepeats.adapter = listAdapterWithOutRepeats
 
             } else {
                 dataArrayListWithRepeats.clear()
@@ -95,11 +105,18 @@ class CombinatoricsView : AppCompatActivity() {
             if (binding.placementBottomInput.text != null && binding.placementBottomInput.text.toString() != "" &&
                     binding.placementTopInput.text != null && binding.placementTopInput.text.toString() != "") {
 
-                binding.placementResult.text = (
-                        (fact(binding.placementBottomInput.text.toString().toInt()))/
-                                (fact(binding.placementBottomInput.text.toString().toInt() -
-                                        binding.placementTopInput.text.toString().toInt()))
-                        ).toString()
+                if (binding.placementBottomInput.text.toString().toInt() > 20 || binding.placementTopInput.text.toString().toInt() > 20) {
+                    Toast.makeText(this, "Слишком большие числа", Toast.LENGTH_SHORT).show()
+                    binding.placementResult.text = null
+                } else {
+                    binding.placementResult.text = (
+                            (fact(binding.placementBottomInput.text.toString().toInt()))/
+                                    (fact(binding.placementBottomInput.text.toString().toInt() -
+                                            binding.placementTopInput.text.toString().toInt()))
+                            ).toString()
+                }
+
+
 
             } else {
                 Toast.makeText(this, "Недостаточно данных", Toast.LENGTH_SHORT).show()
@@ -112,12 +129,19 @@ class CombinatoricsView : AppCompatActivity() {
             if (binding.combinationBottomInput.text != null && binding.combinationBottomInput.text.toString() != "" &&
                 binding.combinationTopInput.text != null && binding.combinationTopInput.text.toString() != "") {
 
-                binding.combinationResult.text = (
-                        (fact(binding.combinationBottomInput.text.toString().toInt()))/
-                                (fact(binding.combinationBottomInput.text.toString().toInt() -
-                                        binding.combinationTopInput.text.toString().toInt()) *
-                                fact(binding.combinationTopInput.text.toString().toInt()))
-                        ).toString()
+                if (binding.combinationBottomInput.text.toString().toInt() > 20 || binding.combinationTopInput.text.toString().toInt() > 20) {
+                    Toast.makeText(this, "Слишком большие числа", Toast.LENGTH_SHORT).show()
+                    binding.placementResult.text = null
+                } else {
+                    binding.combinationResult.text = (
+                            (fact(binding.combinationBottomInput.text.toString().toInt()))/
+                                    (fact(binding.combinationBottomInput.text.toString().toInt() -
+                                            binding.combinationTopInput.text.toString().toInt()) *
+                                            fact(binding.combinationTopInput.text.toString().toInt()))
+                            ).toString()
+                }
+
+
 
             } else {
                 Toast.makeText(this, "Недостаточно данных", Toast.LENGTH_SHORT).show()
